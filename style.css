@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
 }
+
 body {
   background-color: black;
 }
@@ -13,6 +14,14 @@ body {
 body {
   font-family: "Poppins", sans-serif;
   color: rgb(171, 11, 11);
+}
+
+body::-webkit-scrollbar{
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb{
+  background-color : linear-gradient(red,blue) ;
+  border-radius: 20px;
 }
 
 html {
@@ -54,7 +63,10 @@ a {
   text-decoration: none;
   text-decoration-color: rgb(66, 2, 2);
 }
-
+a::selection{
+  background-color:rgb(52, 41, 84);
+  color:rgb(255, 0, 0);
+}
 a:hover {
   color: rgb(237, 234, 234);
   text-decoration: underline;
@@ -181,6 +193,7 @@ section {
   height: 400px;
   width: 400px;
   border-radius: 1rem;
+  /* filter: grayscale(10); */
   margin: auto 0;
 }
 
@@ -245,26 +258,31 @@ section {
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
+  box-shadow: 5px 5px 0 whitepx;
 }
 
 .btn-color-1,
 .btn-color-2:hover {
   background: rgb(0, 0, 0);
+  box-shadow: 5px 5px 0 whitepx;
 
   color: rgb(184, 2, 2);
 }
 
 .btn-color-1:hover {
   background: rgb(0, 0, 0);
+  box-shadow: 5px 5px 0 whitepx;
 }
 
 .btn-color-2 {
   background: none;
   color: rgb(167, 0, 0);
+
 }
 
 .btn-color-2:hover {
   border: rgb(114, 0, 0) 0.1rem solid;
+  box-shadow: 5px 5px 0 whitepx;
 }
 
 .btn-container {
@@ -316,12 +334,19 @@ section {
 .section-container {
   gap: 4rem;
   height: 80%;
+  overflow: hidden;
+ 
 }
 
 .section__pic-container {
   height: 400px;
   width: 400px;
   margin: auto 0;
+  transition: all ease 1.5s;
+ 
+}
+.section__pic-container:hover {
+  scale:1.2;
 }
 
 /* EXPERIENCE SECTION */
@@ -456,11 +481,13 @@ footer p {
   background-color: #000000;
   text-align: center;
   padding: 50px 0;
+  
 }
 
 .section-image img {
   max-width: 100%;
   height: auto;
+  
 }
 
 /* Add this to your existing CSS */
@@ -478,8 +505,10 @@ footer p {
 .quote {
   padding-top: 10;
   font-size: 24px;
+
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
   font-style: italic;
-  color: #white;
+  color: transparent;
   max-width: 600px;
   margin: 0 auto;
   background-color: black;
